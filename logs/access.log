@@ -1,5 +1,0 @@
-192.168.0.100 - - [21/Dec/2022:12:20:57 +0000] "GET / HTTP/1.1" 500 847932 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
-192.168.0.100 - - [21/Dec/2022:12:21:24 +0000] "GET / HTTP/1.1" 500 847932 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
-192.168.0.100 - - [21/Dec/2022:12:21:45 +0000] "GET / HTTP/1.1" 500 847867 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
-192.168.0.100 - - [21/Dec/2022:12:21:47 +0000] "GET / HTTP/1.1" 500 847932 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
-192.168.0.100 - - [21/Dec/2022:12:22:26 +0000] "GET / HTTP/1.1" 200 5147 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
