@@ -12,6 +12,7 @@ Plan/report is [here] (https://docs.google.com/document/d/1XYcaGZKjbicPRw3z2NiuF
 - Pull this repo and checkout master branch
 - Create user and database in your database server for project named like 'voroz'
 - Set database credentials to ./config/database.php
+- In ./Makefile change PHP_CONTAINER value to your php8 container name
 - Execute: 
 `make install`
 
