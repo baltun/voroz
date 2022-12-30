@@ -15,6 +15,7 @@ Plan/report is [here] (https://docs.google.com/document/d/1XYcaGZKjbicPRw3z2NiuF
 - In ./Makefile change PHP_CONTAINER value to your php8 container name
 - Execute: 
 `make install`
+- create new user by tinker executing command 'php artisan tinker' and in tinker 'User::create(['name'=>'user_name', 'email' => 'some@email.ru'])
 
 ## Functionality description
 * console auth script
