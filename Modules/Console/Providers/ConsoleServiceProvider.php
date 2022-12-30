@@ -4,6 +4,7 @@ namespace Modules\Console\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Factory;
+use Symfony\Component\Finder\Finder;
 
 class ConsoleServiceProvider extends ServiceProvider
 {
@@ -28,6 +29,7 @@ class ConsoleServiceProvider extends ServiceProvider
         $this->registerConfig();
         $this->registerViews();
         $this->loadMigrationsFrom(module_path($this->moduleName, 'Database/Migrations'));
+        $this->registerCommands('Modules\Console');
     }
 
     /**
@@ -110,5 +112,24 @@ class ConsoleServiceProvider extends ServiceProvider
             }
         }
         return $paths;
+    }
+
+    /**
+     * Register commands
+     *
+     * @param string $namespace
+     */
+    protected function registerCommands($namespace = '')
+    {
+        $finder = new Finder(); // from Symfony\Component\Finder;
+        $finder->files()->name('*Command.php')->in(__DIR__ . '/../Console');
+
+        $classes = [];
+        foreach ($finder as $file) {
+            $class = $namespace.'\\Console\\'.$file->getBasename('.php');
+            array_push($classes, $class);
+        }
+
+        $this->commands($classes);
     }
 }
