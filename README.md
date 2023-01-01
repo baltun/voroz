@@ -15,7 +15,6 @@ Plan/report is [here] (https://docs.google.com/document/d/1XYcaGZKjbicPRw3z2NiuF
 - In ./Makefile change PHP_CONTAINER value to your php8 container name
 - Execute: 
 `make install`
-- create new user by executing command 'php artisan db:seed'
 
 ## Functionality description
 * console auth script

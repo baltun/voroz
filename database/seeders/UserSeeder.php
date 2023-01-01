@@ -17,10 +17,12 @@ class UserSeeder extends Seeder
     public function run()
     {
         $user = new User();
-        $user->firstOrCreate([
-            'name' => 'test_user',
-            'email' => 'test_email@mail.ru',
-            'password' => Hash::make('password'),
-        ]);
+        $user->firstOrCreate(
+            [
+                'name' => 'test_user',
+                'email' => 'test_email@mail.ru'
+            ],
+            ['password' => bcrypt('password')]
+        );
     }
 }
