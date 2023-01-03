@@ -4,6 +4,9 @@ namespace Modules\Console\Console;
 
 use App\Models\User;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
+use Psy\Readline\Hoa\Console;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 
@@ -41,16 +44,14 @@ class GetTokenCommand extends Command
     public function handle()
     {
         $user = User::where('email', $this->argument('login'))->first();
-//        dd($user);
-        if ($user) {
+        if ($user && (Hash::check($this->argument('password'), $user->password))) {
             $token = $user->createToken('token_name_unused');
-
         } else {
-            throw new \LogicException('No such user');
+            throw new \LogicException('Wrong credentials (no such user or incorrect password)');
         }
 
-        $this->line('Token for '.$this->argument('login'));
-        $this->line($token->plainTextToken);
+        $this->info('Token for '.$this->argument('login').':');
+        $this->info($token->plainTextToken);
     }
 
     /**
