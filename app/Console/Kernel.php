@@ -15,7 +15,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // daily delete of expired api tokens
+        // daily delete of expired api tokens older then 24 hours
         $schedule->command('sanctum:prune-expired --hours=24')->daily();
     }
 

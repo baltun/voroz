@@ -1,10 +1,11 @@
+
 # Test task for IP Vorozhcov Roman
 ## Task
 Task text is [here] (https://docs.google.com/document/d/1pFhLhqXE5_fQFxc4pgOsp8UCh0C_zc2KT_K9bxjsMyI/view)
 
 ## Plan / Report
 Plan/report is [here] (https://docs.google.com/document/d/1XYcaGZKjbicPRw3z2NiuFecQjLx7E7cPGgG0xbSoYH4/edit?usp=sharing)
-
+ 
 ## Install
 - You should have lamp/lnmp (linux, web-server, database server, php) installed
 - Create config in web-server for domain (virtual host), named like voroz.lo

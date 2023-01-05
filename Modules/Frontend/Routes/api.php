@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
 use Modules\Frontend\Http\Controllers\JsonCreationController;
 
 /*
@@ -15,11 +14,12 @@ use Modules\Frontend\Http\Controllers\JsonCreationController;
 |
 */
 
+Route::middleware('auth:sanctum')->get('/frontend', function (Request $request) {
+    return $request->user();
+});
 
+Route::middleware('auth:sanctum')->group(function () {
 
-Route::middleware(['auth:sanctum'])->group(function () {
-    Route::get('/user', function (Request $request) {
-        return $request->user();
-    });
+    Route::match(['get', 'post'], '/json', [JsonCreationController::class, 'store']);
 
 });
