@@ -23,7 +23,10 @@ Plan/report is [here] (https://docs.google.com/document/d/1XYcaGZKjbicPRw3z2NiuF
 * creation script
   + ...
 * Read, Update, Delete script
-  + ...
+  + authenticate
+    - open site and login
+    - enter credentials for test user - login: test_user@mail.ru, password: password
+    - open menu item  
 
 ## Tests
 You can run tests by executing: 
