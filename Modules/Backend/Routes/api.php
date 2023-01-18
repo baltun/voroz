@@ -16,3 +16,7 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/backend', function (Request $request) {
     return $request->user();
 });
+
+
+Route::resource('jsons', \Modules\Backend\Http\Controllers\API\JsonAPIController::class)
+    ->except(['create', 'edit']);

@@ -13,4 +13,5 @@
 
 Route::prefix('backend')->group(function() {
     Route::get('/', 'BackendController@index');
+    Route::resource('jsons', \Modules\Backend\Http\Controllers\JsonController::class)->except(['create']);
 });
