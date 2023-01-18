@@ -1,7 +1,7 @@
 <!-- Json Field -->
 <div class="col-sm-12">
     {!! Form::label('json', 'Json:') !!}
-    <p>{{ $json->json }}</p>
+    <p><?php dump(json_decode($json->json)) ?></p>
 </div>
 
 <!-- Created At Field -->
