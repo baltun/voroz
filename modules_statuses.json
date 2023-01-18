@@ -1,5 +1,5 @@
 {
     "Console": true,
-    "Backend": false,
+    "Backend": true,
     "Frontend": true
 }
