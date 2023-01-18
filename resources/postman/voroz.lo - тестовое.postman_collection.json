@@ -1,0 +1,85 @@
+{
+	"info": {
+		"_postman_id": "112bc11c-87a7-46cf-9457-b2820375cf6c",
+		"name": "voroz.lo - тестовое",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5458301"
+	},
+	"item": [
+		{
+			"name": "create",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"data\": {\n        \"id\": 123,\n        \"json\": {\n            \"prop1\": \"abracadabra\",\n            \"prop2\": {\n                \"text1\": \"asdfasf\",\n                \"arr1\": [\n                    \"asdf\", 123, \"zxcv\", \"asdf\"\n                ] \n            }\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/json",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"json"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
