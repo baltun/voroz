@@ -30,3 +30,11 @@ test:
 .PHONY: composer
 composer:
 	docker exec -u root:root -it $(PHP_CONTAINER) bash -c 'cd /var/www/$(shell basename $(CURDIR))/; composer $(filter-out $@,$(MAKECMDGOALS))'
+
+.PHONY: crud_console
+crud_console:
+	docker exec -u $(HOST_USER) -it $(PHP_CONTAINER) bash -c 'cd /var/www/$(shell basename $(CURDIR))/; php artisan infyom:api_scaffold $(filter-out $@,$(MAKECMDGOALS))'
+
+.PHONY: crud_file
+crud_file:
+	docker exec -u $(HOST_USER) -it $(PHP_CONTAINER) bash -c 'cd /var/www/$(shell basename $(CURDIR))/; php artisan infyom:api_scaffold  --fieldsFile=./resources/model_schemas/$(filter-out $@,$(MAKECMDGOALS)).json $(filter-out $@,$(MAKECMDGOALS))'
