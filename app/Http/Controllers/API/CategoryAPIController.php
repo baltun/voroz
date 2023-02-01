@@ -19,12 +19,9 @@ class CategoryAPIController extends AppBaseController
     /** @var  CategoryRepository */
     private $categoryRepository;
 
-    public function __construct(Request $request, CategoryRepository $categoryRepo)
+    public function __construct(CategoryRepository $categoryRepo)
     {
         $this->categoryRepository = $categoryRepo;
-        $method = $request->method();
-        $isPost = $request->isMethod('post');
-        echo($method . $isPost);
     }
 
     /**

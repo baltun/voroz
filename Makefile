@@ -35,6 +35,10 @@ composer:
 crud_console:
 	docker exec -u $(HOST_USER) -it $(PHP_CONTAINER) bash -c 'cd /var/www/$(shell basename $(CURDIR))/; php artisan infyom:api_scaffold $(filter-out $@,$(MAKECMDGOALS))'
 
+.PHONY: crud_console_rollback
+crud_console_rollback:
+	docker exec -u $(HOST_USER) -it $(PHP_CONTAINER) bash -c 'cd /var/www/$(shell basename $(CURDIR))/; php artisan infyom:rollback $(filter-out $@,$(MAKECMDGOALS)) api_scaffold'
+
 .PHONY: crud_file
 crud_file:
 	docker exec -u $(HOST_USER) -it $(PHP_CONTAINER) bash -c 'cd /var/www/$(shell basename $(CURDIR))/; php artisan infyom:api_scaffold  --fieldsFile=./resources/model_schemas/$(filter-out $@,$(MAKECMDGOALS)).json $(filter-out $@,$(MAKECMDGOALS))'
