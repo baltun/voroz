@@ -31,3 +31,12 @@ Plan/report is [here] (https://docs.google.com/document/d/1XYcaGZKjbicPRw3z2NiuF
 ## Tests
 You can run tests by executing: 
 `make tests`
+
+# Test task "Time Kata"
+## Task
+https://www.codewars.com/kata/5857e8bb9948644aa1000246/train/php
+Инструкции к задаче находятся на странице выше, там же можно проверить правильность написанного кода
+
+## Использование
+точка входа находится в команде TimeKataCommand 
+запуск из консоли: php artisan timekata 
