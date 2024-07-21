@@ -27,4 +27,3 @@ Route::middleware('auth')->group(function () {
     Route::resource('products', App\Http\Controllers\ProductController::class);
     Route::resource('attributes', App\Http\Controllers\AttributeController::class);
 });
-

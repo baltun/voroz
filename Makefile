@@ -42,3 +42,8 @@ crud_console_rollback:
 .PHONY: crud_file
 crud_file:
 	docker exec -u $(HOST_USER) -it $(PHP_CONTAINER) bash -c 'cd /var/www/$(shell basename $(CURDIR))/; php artisan infyom:api_scaffold  --fieldsFile=./resources/model_schemas/$(filter-out $@,$(MAKECMDGOALS)).json $(filter-out $@,$(MAKECMDGOALS))'
+
+.PHONY: queues_start
+queues_start:
+	#docker exec -u $(HOST_USER) -it $(PHP_CONTAINER) bash -c 'cd /var/www/$(shell basename $(CURDIR))/; supervisor $(filter-out $@,$(MAKECMDGOALS))'
+

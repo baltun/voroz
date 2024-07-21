@@ -1,0 +1,31 @@
+##### Laravel Worker on PHP 8.2 #############
+gsoft_php82:
+    build: ${DOCKER_STACK_PATH_HOST}/php82
+    container_name: gsoft_php82
+    restart: always
+      #ports:
+      #- "9000:9000"
+    #expose:
+    #- "9000"
+    #- "99001"
+    volumes:
+        - ${APP_CODE_PATH_HOST}:${APP_CODE_PATH_CONTAINER}
+        - ${DOCKER_STACK_PATH_HOST}/php82/config/custom.php.ini:/usr/local/etc/php/conf.d/custom.php.ini
+        - ${DOCKER_STACK_PATH_HOST}/php82/config/www.conf:/usr/local/etc/php-fpm.d/www.conf
+        - ${DOCKER_STACK_PATH_HOST}/php82/xdebug/xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+        - ${DOCKER_STACK_PATH_HOST}/php82/home/myuser:/home/myuser
+        - ${DOCKER_STACK_PATH_HOST}/php82/xhprof/reports:/tmp/xhprof
+        #      - ${DOCKER_STACK_PATH_HOST}/php82/xhprof/xhprof_html:/usr/local/lib/php/xhprof_html
+        #      - ${DOCKER_STACK_PATH_HOST}/php82/xhprof/xhprof_html/logs:/usr/local/lib/php/xhprof_html/logs
+        #      - ${DOCKER_STACK_PATH_HOST}/composer/auth.json:/root/.composer/auth.json
+        - ${DOCKER_STACK_PATH_HOST}/xhgui/config:/var/xhgui/config
+
+    environment:
+        PHP_IDE_CONFIG: "serverName=Docker"
+        XDG_CONFIG_HOME: "/home/myuser"
+        OSFONTDIR: "/home/myuser"
+    working_dir: "/var/www"
+    user: "${UID}:${GID}"
+    #    user: "root:root"
+    networks:
+        - gsoft
