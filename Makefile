@@ -1,5 +1,11 @@
-PHP_CONTAINER=gsoft_php8
-HOST_USER=1000:1000
+# подключаем .env файл с переменными
+# (в частности с именем используемого контейнера c php)
+include ./.env
+export
+
+
+#PHP_CONTAINER=gsoft_php82
+#HOST_USER=1000:1000
 
 .PHONY: install
 install:
