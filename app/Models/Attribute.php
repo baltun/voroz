@@ -3,10 +3,13 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
- use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+
 class Attribute extends Model
 {
-    use HasFactory;    public $table = 'attributes';
+    use HasFactory;
+
+    public $table = 'attributes';
 
     public $fillable = [
         'name',
@@ -19,8 +22,8 @@ class Attribute extends Model
     ];
 
     public static array $rules = [
-        
+
     ];
 
-    
+
 }
